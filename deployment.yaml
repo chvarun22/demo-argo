@@ -36,6 +36,6 @@ spec:
     spec:
       containers:
       - name: demo-webapp
-        image: gcr.io/$PROJECT_ID/docker:0.1.390
+        image: gcr.io/sublime-state-352111/docker:0.1.394
         ports:
         - containerPort: 80
