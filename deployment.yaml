@@ -1,16 +1,16 @@
 apiVersion: v1
 kind: Namespace
 metadata: 
-  name: demo:0.1.358
+  name: demo:0.1.362
 ---
 kind: Service
 apiVersion: v1
 metadata:
-  name: demo:0.1.358
-  namespace: demo:0.1.358
+  name: demo:0.1.362
+  namespace: demo:0.1.362
 spec:
   selector:
-    app: demo:0.1.358
+    app: demo:0.1.362
   ports:
   - protocol: TCP
     port: 80
@@ -20,22 +20,22 @@ spec:
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: demo:0.1.358
-  namespace: demo:0.1.358
+  name: demo:0.1.362
+  namespace: demo:0.1.362
   labels:
-    app: demo:0.1.358
+    app: demo:0.1.362
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: demo:0.1.358
+      app: demo:0.1.362
   template:
     metadata:
       labels:
-        app: demo:0.1.358
+        app: demo:0.1.362
     spec:
       containers:
-      - name: demo:0.1.358
-        image: chvarun22/docker:$TAG
+      - name: demo:0.1.362
+        image: gcr.io/sublime-state-352111/demo:0.1.362
         ports:
         - containerPort: 80
