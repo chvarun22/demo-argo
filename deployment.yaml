@@ -6,36 +6,36 @@ metadata:
 kind: Service
 apiVersion: v1
 metadata:
-  name: demo-webapp
+  name: demo-webapp:0.1.374
   namespace: demo
 spec:
   selector:
-    app: demo-webapp
+    app:0.1.374
   ports:
   - protocol: TCP
     port: 80
     targetPort: 80
   type: LoadBalancer
 ---
-apiVersion: apps/v1
+apiVersion: app:0.1.374
 kind: Deployment
 metadata:
-  name: demo-webapp
+  name: demo-webapp:0.1.374
   namespace: demo
   labels:
-    app: demo-webapp
+    app:0.1.374
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: demo-webapp
+      app:0.1.374
   template:
     metadata:
       labels:
-        app: demo-webapp
+        app:0.1.374
     spec:
       containers:
-      - name: demo-webapp
-        image: gcr.io/sublime-state-352111/app:0.1.370
+      - name: demo-webapp:0.1.374
+        image: gcr.io/$GOOGLE_PROJECT_ID/demo:$TAG
         ports:
-        - containerPort: 80 
+        - containerPort: 80
