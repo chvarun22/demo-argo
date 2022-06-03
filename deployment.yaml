@@ -6,36 +6,36 @@ metadata:
 kind: Service
 apiVersion: v1
 metadata:
-  name: demo-webapp:0.1.378
+  name: demo-webapp
   namespace: demo
 spec:
   selector:
-    app:0.1.378
+    app: demo-webapp
   ports:
   - protocol: TCP
     port: 80
     targetPort: 80
   type: LoadBalancer
 ---
-apiVersion: app:0.1.378
+apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: demo-webapp:0.1.378
+  name: demo-webapp
   namespace: demo
   labels:
-    app:0.1.378
+    app: demo-webapp
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app:0.1.378
+      app: demo-webapp
   template:
     metadata:
       labels:
-        app:0.1.378
+        app: demo-webapp
     spec:
       containers:
-      - name: demo-webapp:0.1.378
-        image: gcr.io/$PROJECT_ID/app:0.1.378
+      - name: demo-webapp
+        image: gcr.io/$PROJECT_ID/app:$tag
         ports:
         - containerPort: 80
