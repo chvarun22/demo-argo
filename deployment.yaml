@@ -36,6 +36,6 @@ spec:
     spec:
       containers:
       - name: demo-webapp
-        image: chvarun22/docker:0.1.193
+        image: chvarun22/docker:0.1.197
         ports:
         - containerPort: 80
