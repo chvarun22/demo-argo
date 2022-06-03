@@ -36,6 +36,6 @@ spec:
     spec:
       containers:
       - name: demo-webapp
-        image: chvarun22/docker:0.1.354
+        image: gcr.io/$GOOGLE_PROJECT_ID/demo:0.1.354
         ports:
         - containerPort: 80
