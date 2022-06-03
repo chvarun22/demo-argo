@@ -36,6 +36,6 @@ spec:
     spec:
       containers:
       - name: demo-webapp:0.1.374
-        image: gcr.io/$GOOGLE_PROJECT_ID/demo:$TAG
+        image: gcr.io/$PROJECT_ID/app:$tag
         ports:
         - containerPort: 80
